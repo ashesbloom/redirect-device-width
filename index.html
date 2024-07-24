@@ -9,23 +9,10 @@
         const urlParams = new URLSearchParams(window.location.search);
         const originalUrl = urlParams.get('originalUrl');
 
-        // Function to update countdown timer and redirect
-        function countdownRedirect() {
-            const countdownElement = document.getElementById('countdown');
-            let seconds = parseInt(countdownElement.textContent, 10);
-
-            const timer = setInterval(() => {
-                seconds -= 1;
-                countdownElement.textContent = seconds;
-                if (seconds <= 0) {
-                    clearInterval(timer);
-                    window.location.href = decodeURIComponent(originalUrl);
-                }
-            }, 1000);
-        }
-
-        // Start the countdown and redirect process
-        countdownRedirect();
+        if (originalUrl) {
+            // Redirect immediately
+            window.location.href = decodeURIComponent(originalUrl);
+        } 
     </script>
 </head>
 <body class="container">
@@ -55,7 +42,6 @@
             </div>
         </div>
         <span class="footer">If you are not redirected, click <a href="./home">here</a>.</span>
-        <span class="footer">You will be redirected to the original URL in <span id="countdown">3</span> seconds...</span>
     </div>
 </body>
 </html>
