@@ -8,7 +8,8 @@
     <script>
         // Get the original URL from the query parameter
         const urlParams = new URLSearchParams(window.location.search);
-        const originalUrl = urlParams.get('originalUrl') || 'https://your-original-site-url.com'; // Fallback URL
+        const url = `http://blogs.ap-south-1.elasticbeanstalk.com${urlParams.get('originalUrl')}`
+        const originalUrl = url || 'http://blogs.ap-south-1.elasticbeanstalk.com/'; // Fallback URL
     
         setTimeout(() => {
           window.location.href = originalUrl;
