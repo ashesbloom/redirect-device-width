@@ -10,7 +10,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const url = `http://blogs.ap-south-1.elasticbeanstalk.com${urlParams.get('originalUrl')}`
         const originalUrl = url || 'http://blogs.ap-south-1.elasticbeanstalk.com/'; // Fallback URL
-    
+        consol.log(originalUrl);
         setTimeout(() => {
           window.location.href = originalUrl;
         }, 3000);
