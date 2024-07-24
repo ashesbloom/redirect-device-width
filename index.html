@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/stylesheet/style.css">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const redirectUrl = params.get('redirect');
+            
+            if (redirectUrl) {
+                setTimeout(function() {
+                    window.location.href = redirectUrl;
+                }, 3000);
+            }
+        });
+    </script>
+</head>
+<body class="container">
+    <div class="container-2">
+        <div class="terminal_toolbar">
+            <div class="butt">
+                <button class="btn btn-color"></button>
+                <button class="btn"></button>
+                <button class="btn"></button>
+            </div>
+            <p class="user">ashes@admin: ~</p>
+            <div class="add_tab">+</div>
+        </div>
+        <div class="terminal_body">
+            <div class="terminal_promt">
+                <div class="terminal_promt_text">
+                    <span class="terminal_user">admin@message:</span>
+                    <span class="terminal_location">~</span>
+                    <span class="terminal_bling">$</span>
+                </div>
+                <span class="message">
+                    This site <span style="color: brown;">isn't styled</span> for your device width yet.<br>
+                    <span class="m-action-1">Thank you for your understanding.</span><br><br>
+                    <span class="m-action-2">Redirecting...</span>
+                    <span class="terminal_cursor"></span>
+                </span>
+            </div>
+        </div>
+        <span class="footer">If you are not redirected, click <a href="./home">here</a>.</span>
+    </div>
+</body>
+</html>
