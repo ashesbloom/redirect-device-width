@@ -6,17 +6,14 @@
     <link rel="stylesheet" href="./public/stylesheet/style.css">
     <title>Redirecting...</title>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const params = new URLSearchParams(window.location.search);
-            const redirectUrl = params.get('redirect');
-            
-            if (redirectUrl) {
-                setTimeout(function() {
-                    window.location.href = redirectUrl;
-                }, 3000);
-            }
-        });
-    </script>
+        // Get the original URL from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const originalUrl = urlParams.get('originalUrl') || 'https://your-original-site-url.com'; // Fallback URL
+    
+        setTimeout(() => {
+          window.location.href = originalUrl;
+        }, 3000);
+  </script>
 </head>
 <body class="container">
     <div class="container-2">
