@@ -6,9 +6,15 @@
     <link rel="stylesheet" href="./public/stylesheet/style.css">
     <title>Redirecting...</title>
     <script>
-            setTimeout(() => {
-                window.location.href = 'http://blogs.ap-south-1.elasticbeanstalk.com';
-            }, 3000);
+        const url = new URL(window.location.href);
+        const redirect  = url.searchParams.get('url');
+        setTimeout(() => {
+            if(redirect){
+                window.location.href = redirect;
+            }else{
+                alert('error');
+            }
+        }, 3000);
     </script>
 </head>
 <body class="container">
